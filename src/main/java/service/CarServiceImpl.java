@@ -15,14 +15,12 @@ public class CarServiceImpl implements CarService{
         cars.add(new Car("Mercedes", 6, "white"));
         cars.add(new Car("SKODA", 3, "gold"));
         List<Car> qtyCars = new ArrayList<>();
-        if (count > 0 || count >= 5) {
+        if (count > cars.size()) {
+            count = cars.size();
+        }
             for (int i = 0; i < count; i++) {
                 qtyCars.add(cars.get(i));
             }
-        }
-        if (count == null) {
-            count = cars.size();
-        }
         return qtyCars;
     }
 }
